@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>冬瓜游戏</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta content="telephone=no" name="format-detection" /> 
+
+    <meta name="keywords" content="keywords"/>
+    <meta name="description" content="150 words"/>
+    <meta name="robots" content="index,follow" />
+
+    <link rel="stylesheet" href="../public/static/css/Hami.css"/>
+    <link rel="stylesheet" href="../public/static/css/donguayx.css"/>
+
+    <script src="../public/static/library/jquery/3.0.0-beta1/jquery.min.js"></script>
+    <script src="../public/static/library/vue/1.0.24/vue.min.js"></script>
+    <script src="../public/static/library/vue-router/0.7.13/vue-router.min.js"></script>
+</head>
+<body id="dg-app">
+    <div id="dg-app-home" class="dg-app-windows">
+        <header>
+            <div class="dg-center">
+                <div class='dg-head-logo'>
+                    <a>donguayx</a>
+                </div>
+                <ul class='dg-head-menu'>
+                    <!--<li><a class="dg-default">冬瓜百科</a></li>
+                    <li><a class="dg-default">冬瓜表情</a></li>
+                    <li><a class="dg-default">在线留言</a></li>-->
+                   <li><a class="dg-default">注册</a></li>
+                   <li><a class="dg-signup">登录</a></li>
+                    <li><a class="dg-list"><i class="icofont icon-menu"></i></a></li>
+                </ul>
+            </div>
+        </header>
+
+<!--         <section>
+           <h3>冬瓜工作室</h3>
+           <p>这里是一段比较详细的介绍</p>
+           <br>
+           <a class="dg-btn" style="padding:0 50px;">了解详情</a>
+           <ul class="dg-features-group">
+               <li><img src="../public/static/images/donguayx/banner/1.png"></li>
+               <li><img src="../public/static/images/donguayx/banner/2.png"></li>
+               <li><img src="../public/static/images/donguayx/banner/3.png"></li>
+               <li><img src="../public/static/images/donguayx/banner/4.png"></li>
+           </ul>
+        </section> -->
+    <div style="text-align:center;">
+          <h1>Hello App!</h1>
+          <p>
+            <!-- use v-link directive for navigation. -->
+            <a v-link="'foo'">Go to Foo</a>
+            <a v-link="'bar'">Go to Bar</a>
+          </p>
+          <!-- use router-view element as route outlet -->
+          <router-view></router-view>
+
+        <footer>
+            <span>donguayx.com &nbsp; ©冬瓜领地 &nbsp; 桂ICP备15005028号-1</span>
+        </footer>
+    </div>
+    <!--
+    <div class="dg-window-user">
+        <div class="dg-home">
+            <div class="dg-box">
+            <div class="dg-logo"><span>donguayx</span></div>
+            <ul>
+                <li>
+                    <input type="text" maxlength="24" placeholder="用户名 \ 邮箱 \ 手机号">
+                </li>
+                <li>
+                    <input type="password" maxlength="24" placeholder="密码">
+                </li>
+                <li>
+                    <input class="dg-verify" type="text" maxlength="4" placeholder="验证码">
+                    <img class="dg-verify-img" src="">
+                </li>
+                <li>
+                    <a class="dg-btn dg-btn-submit">登 录</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </div>
+    -->
+
+
+    <script>
+
+    // 定义组件
+    var Foo = Vue.extend({
+         template: '<div>\
+                      <p>当前路径: {{$route.path}}</p>\
+                      <p>当前路由参数: {{$route.params | json}}</p>\
+                    </div>'
+    })
+
+    var Bar = Vue.extend({
+         template: '<div>\
+                      <p>当前路径: {{$route.path}}</p>\
+                      <p>当前路由参数: {{$route.params | json}}</p>\
+                    </div>'
+    })
+
+    // 路由器需要一个根组件。
+    // 出于演示的目的，这里使用一个空的组件，直接使用 HTML 作为应用的模板
+    var App = Vue.extend({
+
+    })
+
+    // 创建一个路由器实例
+    // 创建实例时可以传入配置参数进行定制，为保持简单，这里使用默认配置
+    var router = new VueRouter({
+        // hashbang:false,
+        // history:true
+    })
+
+    // 定义路由规则
+    // 每条路由规则应该映射到一个组件。这里的“组件”可以是一个使用 Vue.extend
+    // 创建的组件构造函数，也可以是一个组件选项对象。
+    // 稍后我们会讲解嵌套路由
+    router.map({
+        '/foo': {
+            component: Foo
+        },
+        '/bar': {
+            component: Bar
+        }
+    })
+
+    console.log(router.mode);
+    // 现在我们可以启动应用了！
+    // 路由器会创建一个 App 实例，并且挂载到选择符 #app 匹配的元素上。
+    router.start( App, '#dg-app' );
+
+
+
+    // var app = new Vue({
+    //     el: '#dg-app',
+    //     data: {
+            
+    //     }
+    // })
+    </script>   
+</body>
+</html>
